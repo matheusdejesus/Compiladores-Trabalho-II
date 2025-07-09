@@ -3,7 +3,7 @@ Esta versão faz as análises léxica, sintática e semântica.
 Ela está de acordo com a gramática abaixo.  
 
 ## Gramática Modificada
-PROGRAM     ::= programa ID BLOCK '.' EOF  
+PROGRAM     ::= programa ID BLOCK  
 BLOCK       ::= inicio STMTS fim  
 STMTS       ::= STMT; STMTS | ε  
 STMT        ::= BLOCK | DECL | ASSIGN | WRITE | IF  
