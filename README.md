@@ -30,7 +30,7 @@ TYPE        ::= inteiro | real | booleano
 
 1. **Navegue até a pasta do código-fonte:**
    ```
-   cd /c/Compiladores-Trabalho-II/src
+   cd /caminho/Compiladores-Trabalho-II/src
    ```
 
 2. **Compile o projeto:**
@@ -40,7 +40,7 @@ TYPE        ::= inteiro | real | booleano
 
 3. **Volte para a pasta raiz:**
    ```
-   cd /c/Compiladores-Trabalho-II
+   cd /caminho/Compiladores-Trabalho-II
    ```
 
 4. **Execute o analisador:**
