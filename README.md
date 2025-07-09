@@ -1,18 +1,49 @@
-## Getting Started
+# Compiladores-Trabalho-II
+Esta versão faz as análises léxica, sintática e semântica.  
+Ela está de acordo com a gramática abaixo.  
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Gramática Modificada
+PROGRAM     ::= programa ID BLOCK '.' EOF  
+BLOCK       ::= inicio STMTS fim  
+STMTS       ::= STMT; STMTS | ε  
+STMT        ::= BLOCK | DECL | ASSIGN | WRITE | IF  
+DECL        ::= TYPE ID  
+ASSIGN      ::= ID = EXPR | ID += EXPR | ID -= EXPR | ID *= EXPR  
+WRITE       ::= escreva(ID)  
+IF          ::= se (EXPR) STMT  
+EXPR        ::= EXPR "|" REL | REL  
+REL         ::= REL < ARITH | REL <= ARITH | REL > ARITH | ARITH  
+ARITH       ::= ARITH + TERM | ARITH - TERM | TERM  
+TERM        ::= TERM * FACTOR | FACTOR  
+FACTOR      ::= (EXPR) | LIT_INT | LIT_REAL | LIT_BOOL | ID  
 
-## Folder Structure
+## Definições Regulares
+LETTER      ::= a | b | ... | z | A | B | ... | Z | _  
+DIGIT       ::= 0 | 1 | ... | 9  
+ID          ::= LETTER (LETTER | DIGIT)*  
+LIT_INT     ::= DIGIT+ | 0b(0|1)+  
+LIT_REAL    ::= DIGIT+ . DIGIT+  
+LIT_BOOL    ::= verdadeiro | falso  
+TYPE        ::= inteiro | real | booleano
 
-The workspace contains two folders by default, where:
+## Como executar o código
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+1. **Navegue até a pasta do código-fonte:**
+   ```
+   cd /c/Compiladores-Trabalho-II/src
+   ```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+2. **Compile o projeto:**
+   ```
+   javac dl/DL.java
+   ```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+3. **Volte para a pasta raiz:**
+   ```
+   cd /c/Compiladores-Trabalho-II
+   ```
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+4. **Execute o analisador:**
+   ```
+   java -cp src dl.DL
+   ```

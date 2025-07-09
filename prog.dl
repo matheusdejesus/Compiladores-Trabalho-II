@@ -1,7 +1,12 @@
 programa teste inicio
   inteiro a; inteiro b; real c;
   a = 2;
-  b = 3;
+  b = 0b1010;      
+  a += 3;         
+  b -= 0b0011;     
+  a *= 2;          
+  escreva(a);      
+  escreva(b);      
   c = (a+b)*2.0;
-  escreva(c);
+  escreva(c);      
 fim.

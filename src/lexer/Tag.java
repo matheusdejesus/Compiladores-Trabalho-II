@@ -1,37 +1,40 @@
 package lexer;
 
 public enum Tag {
-	//Reserved Words
+	// Reserved Words
 	PROGRAM("PROGRAM"), BEGIN("BEGIN"), END("END"),
 	INT("INT"), REAL("REAL"), BOOL("BOOL"),
 	WRITE("WRITE"), IF("IF"),
-	//Assign
+	// Assign
 	ASSIGN("ASSIGN"),
-	//Arithmetical Operators
-	SUM("SUM"), SUB("SUB"), MUL("MUL"), 
-	//Logical Operators
+	PLUS_ASSIGN("PLUS_ASSIGN"), // +=
+	MINUS_ASSIGN("MINUS_ASSIGN"), // -=
+	MUL_ASSIGN("MUL_ASSIGN"), // *=
+	// Arithmetical Operators
+	SUM("SUM"), SUB("SUB"), MUL("MUL"),
+	// Logical Operators
 	OR("OR"),
-	//Relational Operators
+	// Relational Operators
 	LT("LT"), LE("LE"), GT("GT"),
-	//Symbols
+	// Symbols
 	SEMI("SEMI"), DOT("DOT"), LPAREN("LPAREN"), RPAREN("RPAREN"),
-	//Literals and Identifiers
+	// Literals and Identifiers
 	LIT_INT("LIT_INT"), LIT_REAL("LIT_REAL"), ID("ID"),
 	TRUE("TRUE"), FALSE("FALSE"),
-	//Others
+	// Others
 	EOF("EOF"), UNK("UNK"), TEMP("TEMP");
-	
+
 	private String name;
-	
+
 	private Tag(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;
 	}
-	
+
 	public boolean isInt() {
 		return this == Tag.INT;
 	}
